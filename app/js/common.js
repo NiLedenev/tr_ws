@@ -11,10 +11,10 @@ $(function() {
 	});
 
 	var api = $('#my-menu').data('mmenu');
-	api.bind('open:finish', function() {
+	api.bind('open:start', function() {
 		$('.hamburger').addClass('is-active');
 	});
-	api.bind('close:finish', function(){
+	api.bind('close:start', function(){
 		$('.hamburger').removeClass('is-active');
 	});
 	
