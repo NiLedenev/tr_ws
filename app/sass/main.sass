@@ -48,10 +48,248 @@ body
 	&.ishome
 		.site-header
 			min-height: 700px
+			height: 100vh
+			background-color: $dark
+			color: #fff
+			.top-line
+				padding-top: 40px
+				position: absolute
+				width: 100%
+				z-index: 1
+
+	
+.logo
+	img
+		width: 125px
+		height: auto
+		margin-left: 45px
+		
+.phone
+	position: absolute
+	right: 85px
+	top: 44px
+	font-family: firasans, sans-serif
+	font-size: 22px
+	white-space: nowrap
+	.fa
+		color: #555
+		font-size: 22px
+		margin-right: 10px
+	
+section, header
+	position: relative
+	background-size: cover
+	background-position: center
+
+section
+	background-color: #fff
+	
+.button
+	display: inline-block
+	border: none
+	color: #fff
+	text-decoration: none
+	background-color: $accent
+	padding: 16px 45px
+	font-size: 13px
+	text-transform: uppercase
+	font-weight: 600
+	letter-spacing: 3px
+	border-radius: 2px
+	text-align: center
+	position: relative
+	outline: none
+	transition: background-color .1s ease
+	&::after
+		transition: background-color .2s ease
+		position: absolute
+		content: ''
+		height: 4px
+		bottom: 0
+		width: 100%
+		background-color: darken($accent, 50%)
+		opacity: .18
+		border-bottom-left-radius: 2px
+		border-bottom-right-radius: 2px
+		left: 0
+	&:focus, &:hover
+		text-decoration: none
+		color: #fff
+	&:hover
+		background-color: lighten($accent, 5%)
+		&::after
+			opacity: .22
+	&:active
+		background-color: darken($accent, 5%)
+		&::after
+			opacity: .32
 
 .img-responsive
 	display: block
 	max-width: 100%
 	height: auto
 
+.hamburger
+	right: 0
+	position: absolute
+	top: 32px
+	.hamburger-box
+		width: 34px
+.hamburger-inner, .hamburger-inner::after, .hamburger-inner::before
+			border-radius: 0
+			width: 34px
+			height: 2px
+			background-color: #fff
+			
+.mm-panels>.mm-panel:after, .mm-panels>.mm-panel:before
+	height: 0
+	
+html.mm-opened
+	overflow-y: scroll
+.mm-panels > .mm-panel.mm-hasnavbar
+	right: -18px
+.mm-listview > li:not(.mm-divider)::after
+	display: none
+.mm-panels>.mm-panel>.mm-listview:first-child, .mm-panels>.mm-panel>.mm-navbar+.mm-listview
+	margin-top: 0
+.mm-menu.mm-theme-black .mm-listview>li.mm-selected>a:not(.mm-next), .mm-menu.mm-theme-black .mm-listview>li.mm-selected>span
+	background-color: transparent
+	color: $accent
+.mm-navbar
+	height: auto
+	position: relative
+	border: none
+	.mm-title 
+		padding: 0
+		img
+			width: 128px
+			height: auto
+			margin: 10px 0 35px
+
+.mm-listview 
+	> li
+		> a
+			transition: color .25s ease
+			padding:
+				left: 14%
+				right: 14%
+				top: 8px
+			&:hover
+				color: $accent
+				&::before
+					color: $accent
+			&::before
+				content: "\f219"
+				font-family: fontawesome
+				margin-right: 8px
+				text-decoration: none
+				font-size: 12px
+				color: #ffffff
+				transition: color .25s
+		&.active
+			&>a
+				color: $accent
+
+.header-flex
+	display: flex
+	height: 100%
+	position: relative
+	top: 0
+
+.flex-center
+	margin: auto
+	
+.header-composition
+	text-align: center
+	position: relative
+	p
+		margin-top: 40px
+	.button
+		margin-top: 25px
+	
+.welcome
+	p
+		text-transform: uppercase
+		font-size: 14px
+		display: flex
+		align-items: center
+		white-space: nowrap
+		margin: 0
+		margin-bottom: -10px
+		span
+			margin: 0 10px
+			width: 100%
+		&::before, &::after
+			content: ''
+			height: 1px
+			width: 100%
+			position: relative
+			background-color: #fff
+			display: inline-block
+	.h1
+		font-weight: 100
+		margin: 0
+		white-space: nowrap
+		text-transform: uppercase
+		font-size: 70px
+		line-height: 1.6
+		border-bottom: 1px solid #fff
+	strong
+		display: block
+		text-transform: uppercase
+		font-size: 17px
+		margin-top: 25px
+		.fa
+			margin-right: 10px
+			font-size: 12px
+			color: #555
+			&:last-child
+				margin-left: 10px
+				margin-right: inherit
+			
+.header-social
+	position: absolute
+	display: flex
+	right: 0
+	height: 100%
+	border-left: rgba(#fff, .1) 1px solid
+	top: 0
+	padding: 0 12.5px
+	
+.soc
+	margin: auto
+	ul, li
+		margin: 0
+		padding: 0
+		list-style-type: none
+	a
+		color: #2c2c2c
+		font-size: 17px
+		display: block
+		background-color: rgba(#fff, .2)
+		height: 38px
+		width: 38px
+		text-align: center
+		margin: 18px 0
+		line-height: 38px
+		border-radius: 10em
+		transition: background-color .25s ease
+		&:hover
+			background-color: rgba(#fff, .4)
+
+.header-contacts
+	position: absolute
+	bottom: 0
+	left: 0
+	border-top: rgba(#fff, .15) 1px solid
+	padding: 12.5px 0
+	width: 100%
+	background-color: rgba(#151515, .15)
+	.fa
+		margin-right: 5px
+		color: #555
+	.phone-h
+		font-family: firasans, sans-serif
+		text-align: center
+	
 @import "media" // Всегда в конце
