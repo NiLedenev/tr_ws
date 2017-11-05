@@ -123,6 +123,18 @@ section
 		background-color: darken($accent, 5%)
 		&::after
 			opacity: .32
+		
+	&.button-white
+		background-color: #fff
+		color: #444
+		&::after
+			background-color: rgba(#000, .6)
+		&:hover
+			&::after
+				background-color: rgba(#000, .2)
+		&:hover
+			&::after
+				background-color: rgba(#000, .4)
 
 .img-responsive
 	display: block
@@ -259,12 +271,12 @@ html.mm-opened
 .soc
 	margin: auto
 	ul, li
-		margin: 0
+		margin: 0 
 		padding: 0
 		list-style-type: none
 	a
 		color: #2c2c2c
-		font-size: 17px
+		font-size: 16px
 		display: block
 		background-color: rgba(#fff, .2)
 		height: 38px
@@ -288,8 +300,110 @@ html.mm-opened
 	.fa
 		margin-right: 5px
 		color: #555
-	.phone-h
+	>.container>.row>div:nth-child(2)
 		font-family: firasans, sans-serif
 		text-align: center
+
+	
+$colors: $blue, $red, $accent
+@for $i from 1 through length($colors)
+	.carousel-services .owl-item:nth-child(#{length($colors)}n+#{$i}),
+	.carousel-services-aside .owl-item:nth-child(#{length($colors)}n+#{$i})
+		background-color: nth($colors, $i)
+	
+.carousel-services
+	background-color: $dark
+	&-item
+		color: #fff
+		font-size: 18px
+		font-weight: 300
+		position: relative
+		display: flex
+		flex-direction: column-reverse
+		&:hover
+			.carousel-services-image
+				opacity: 1
+		.carousel-logo
+			text-align: center
+			img
+				width: 100px
+				height: auto
+				display: inline-block
+		
+	.owl-item
+		&:nth-child(2n+2)
+			.carousel-services-item
+				flex-direction: column
+			
+	&-image
+		background-size: cover
+		background-position: center
+		opacity: .8
+		transition: opacity .7s ease
+	&-content
+		position: relative
+		padding: 60px 10%
+		
+	&-composition
+		margin: auto
+		text-align: center
+		width: 100%
+		h3
+			font-weight: 800
+			font-size: 28px
+			margin-top: 5px
+			span
+				font-size: 18px
+				font-weight: 300	
+				display: block
+		
+	&-list
+		margin: 0
+		padding: 0
+		list-style-type: none
+		margin-bottom: 25px
+		li
+			padding: 9px
+			border-bottom: 1px solid rgba(#000, .12)
+			&:last-child
+				border-bottom: none
+			strong
+				font-family: firasans, sans-serif
+				color: #4a4a4a
+			.fa
+				font-size: 14px
+	
+	.owl-nav
+		position: absolute
+		top: 0
+		width: 100%
+		> div
+			width: 60px
+			height: 60px
+			background-color: #fff
+			color: $dark
+			position: absolute
+			text-align: center
+			line-height: 64
+			font-size: 26px
+			margin-bottom: -10px
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			align-items: center
+			justify-content: center
+			&.owl-prev
+				left: 0
+			&.owl-next
+				right: 0
+		
+.owl-carousel
+	.owl-item
+		backface-visibility: inherit
+	
+.owl-carousel .owl-dots.disabled, .owl-carousel .owl-nav.disabled
+	display: block
 	
 @import "media" // Всегда в конце
