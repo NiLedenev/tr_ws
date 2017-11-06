@@ -18,15 +18,6 @@ $(function() {
 		$('.hamburger').removeClass('is-active');
 	});
 	
-	$('.carousel-service-composition h3').each(function() {
-		var ths = $(this);
-		ths.html(ths.html().replace(/(\S+)\s*$/, '<span>$1</span>'));
-	});
-	
-	$('section h2').each(function() {
-		var ths = $(this);
-		ths.html(ths.html().replace(/^(\S+)/, '<span>$1</span>'));
-	});
 	
 	$('.carousel-services').on('initialized.owl.carousel', function() {
 		setTimeout(function() {
@@ -63,6 +54,24 @@ $(function() {
 			ths.find('.carousel-services-image').css('min-height', thsh);
 		});
 	}carouselService();
+	
+	$('select').selectize();
+	
+	$("form.callback").submit(function() { //Change
+		var th = $(this);
+		$.ajax({
+			type: "POST",
+			url: "/mail.php", //Change
+			data: th.serialize()
+		}).done(function() {
+			$(th).find('.succes').addClass('active').css('display', 'flex').hide().fadeIn();
+			setTimeout(function() {
+				$(th).find('.succes').removeClass('active').fadeOut();
+				th.trigger("reset");
+			}, 3000);
+		});
+		return false;
+	});
 	
 	//Resize Window
 	function onResize() {
