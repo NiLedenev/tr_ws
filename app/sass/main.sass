@@ -37,7 +37,10 @@ body
 				width: 100%
 				z-index: 1
 
-	
+
+.text-center
+	text-align: center
+		
 .logo
 	img
 		width: 125px
@@ -547,6 +550,71 @@ input, textarea, select,
 		& ~ *
 			opacity: .5
 			filter: blur(10px)
+
+
+.reviews
+	text-align: center
+
+	.owl-dots
+		width: 100%
+		text-align: center
+		margin-top: 60px
+		.owl-dot
+			width: 8px
+			height: 8px
+			background-color: #fff
+			border-radius: 10em
+			display: inline-block
+			margin: 5px
+			transition: background-color .5s ease, transform .5s ease
+			&.active
+				background-color: $accent
+				transform: scale(1.4)
+
+.review
+	margin-top: 20px
+	&-header
+		font-family: "Times New Roman", serif
+		font-style: italic
+		font-size: 30px
+		font-weight: bold
+	&-date
+		font-family: "Times New Roman", serif
+		font-style: italic
+		font-size: 15px
+		margin-top: 2px
+		color: #7a7777
+	&-stars
+		margin: 16px 0 35px
+		font-size: 14px
+		color: $accent
+		.fa
+			margin: 0 2.5px
+	&-text
+		color: #95989a
+		
+		
+.quotes
+	position: absolute
+	width: 100%
+	&::after, &::before
+		content: ',,'
+		position: absolute
+		top: 163px
+		font-size: 56px
+		color: $accent
+		font-family: 'Times New Roman', serif
+		font-weight: bold
+		line-height: 0
+		transform: rotate(180deg)
+		display: block
+	&::before
+		top: 204px
+		left: -60px
+	&::after
+		right: -44px
+		transform: rotate(0)
+
 
 	
 @import "media" // Всегда в конце
