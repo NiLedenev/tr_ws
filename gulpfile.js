@@ -98,9 +98,9 @@ gulp.task('build', ['removedist', 'imagemin', 'sass', 'js'], function() {
 gulp.task('deploy', function() {
 
 	var conn = ftp.create({
-		host:      'hostname.com',
-		user:      'username',
-		password:  'userpassword',
+		host:      'salon-krasoty-smitler.000webhostapp.com',
+		user:      'took.out.the.stars',
+		password:  'Mikola1999',
 		parallel:  10,
 		log: gutil.log
 	});
